@@ -17,6 +17,12 @@ section{padding:40px 0}.head{display:flex;align-items:end;justify-content:space-
 .support{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:30px;border:1px solid var(--line);border-radius:17px;background:radial-gradient(ellipse at right,#2b200c,#111 60%)}.support p{max-width:650px;color:var(--muted);line-height:1.7}footer{border-top:1px solid var(--line);margin-top:24px;padding:24px 0;color:var(--muted);font-size:12px}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.foot strong{color:var(--goldlight)}.note{font-size:11px;line-height:1.6;color:#8e887b;margin-top:12px}.hide{display:none!important}
 @media(max-width:850px){.games{grid-template-columns:repeat(3,1fr)}.payments{grid-template-columns:repeat(2,1fr)}nav{gap:11px}}
 @media(max-width:600px){.nav{flex-wrap:wrap}.brand{font-size:12px}nav{order:3;width:100%;justify-content:center;border-top:1px solid #ffffff10;padding-top:10px;font-size:12px}.nav>.btn{padding:10px;font-size:10px}.hero{padding:48px 0 30px}.metric{padding:12px 5px}.metric strong{font-size:17px}.metric span{font-size:8px}.head{align-items:stretch;flex-direction:column}.games{grid-template-columns:repeat(2,1fr);gap:9px}.game{padding:12px 10px}.game h3{font-size:12px}.payments{grid-template-columns:1fr}.support{align-items:flex-start;flex-direction:column;padding:23px}}
+
+/* Always-visible customer support shortcut */
+.quick-support{position:fixed;right:16px;bottom:18px;z-index:9998;display:flex;align-items:center;gap:9px;padding:12px 17px;border-radius:999px;background:linear-gradient(130deg,#fff0b2,#d5a337 65%,#986b16);color:#171105;font-weight:900;font-size:13px;box-shadow:0 5px 24px #0009;border:1px solid #f4d879;cursor:pointer}
+.quick-support .dot{width:9px;height:9px;border-radius:50%;background:#168b42;box-shadow:0 0 0 4px #168b4228}
+@media(max-width:600px){.quick-support{right:12px;bottom:12px;padding:11px 14px;font-size:12px}}
+
 </style>
 </head>
 <body>
@@ -42,7 +48,7 @@ section{padding:40px 0}.head{display:flex;align-items:end;justify-content:space-
 <div class="payments" id="paymentGrid"></div>
 <p class="note">Payment methods are shown for information only. This website does not collect payments or process transactions. Confirm provider availability and recipient details before using any payment service.</p>
 </div></section>
-<section id="support"><div class="wrap"><div class="support"><div><div class="eyebrow">CUSTOMER SUPPORT</div><h2>Questions? <span class="gold">Contact Us</span></h2><p>Visit our Facebook Page to contact Lucky Eagle Casino USA about a game or a listed payment method.</p></div><a class="btn" href="https://www.facebook.com/LuckyEagleCasinoUSA" target="_blank" rel="noopener noreferrer">OPEN FACEBOOK PAGE ↗</a></div></div></section>
+<section id="support"><div class="wrap"><div class="support"><div><div class="eyebrow">CUSTOMER SUPPORT</div><h2>Questions? <span class="gold">Contact Us</span></h2><p>Use the live chat button on this page to message customer support, or visit our Facebook Page.</p></div><a class="btn" href="https://www.facebook.com/LuckyEagleCasinoUSA" target="_blank" rel="noopener noreferrer">OPEN FACEBOOK PAGE ↗</a></div></div></section>
 </main>
 <footer><div class="wrap"><div class="foot"><div><strong>🦅 LUCKY EAGLE CASINO USA</strong><br>Customer Service Available 24/7</div><a href="https://www.facebook.com/LuckyEagleCasinoUSA" target="_blank" rel="noopener noreferrer">Facebook Support ↗</a><span>© <span id="year"></span> Lucky Eagle</span></div><p class="note">Customer information and support are available 24/7.</p></div></footer>
 <script>
@@ -56,17 +62,12 @@ document.getElementById("search").addEventListener("input",e=>renderGames(e.targ
 const pg=document.getElementById("paymentGrid");methods.forEach(m=>{const c=document.createElement("article");c.className="payment";const icon=document.createElement("div");icon.className="payicon";icon.textContent=m[0];const body=document.createElement("div");const title=document.createElement("h3");title.textContent=m[1];const desc=document.createElement("p");desc.textContent="Ask our team about current availability.";body.append(title,desc,contactButton(m[1]));c.append(icon,body);pg.append(c)});
 document.getElementById("year").textContent=new Date().getFullYear();
 </script>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6ae6092fd9be933c4210fb64/1k6997p32';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+
+
+<a class="quick-support" href="#support" aria-label="Customer support">
+  <span class="dot"></span> CUSTOMER SUPPORT
+</a>
+
+<!-- SealReply customer support live chat -->
+<script src="https://cdn.sealreply.com/widget.js" data-site-key="sk_2bfttge32j5dm7j6vnkm6tni4q" async></script>
 </body></html>
